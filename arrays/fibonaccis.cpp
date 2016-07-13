@@ -42,3 +42,24 @@ int find_nth_fibonacci(int n) {
     return sum;
 }
 
+int climbStairs(int n) {
+    if (n <= 1) {
+        return 1;
+    } else if(n == 2) {
+        return 2;
+    }
+    
+    // 每个台阶都可以走1步或者2步
+    int s1 = 1;
+    int s2 = 2;
+    int i = 3;
+    int sum = 0;
+    while (i <= n) {
+        sum = s1 + s2;
+        s1 = s2;
+        s2 = sum;
+        i++;
+    }
+    return sum;
+}
+

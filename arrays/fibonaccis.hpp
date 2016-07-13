@@ -15,4 +15,12 @@ int fibonacci_recursive(int n);
 
 int find_nth_fibonacci(int n);
 
+/*******************************
+ *         拓展练习             *
+ *******************************/
+
+// 爬楼梯
+
+int climbStairs(int n);
+
 #endif /* fibonaccis_hpp */
