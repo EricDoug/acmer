@@ -19,12 +19,13 @@ using namespace std;
 class DynamicProgramming{
 public:
     
-    DynamicProgramming();
-    ~DynamicProgramming();
+//    DynamicProgramming();
+//    ~DynamicProgramming();
     // 最长公共子串
     void lcs(const char* A, const char* B, string& common_s);
     
-private:
+    //编辑距离
+    int edit_distance(string word1, string word2);
     
     
     
