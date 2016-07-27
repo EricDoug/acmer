@@ -108,3 +108,30 @@ int DynamicProgramming::edit_distance(string word1, string word2) {
     
     return d[word1_len][word2_len];
 }
+
+
+int DynamicProgramming::mps(vector<int>& nums) {
+    int nums_len = (int)nums.size();
+    int max_res;
+    
+    int *max_product = new int[nums_len];
+    int *min_product = new int[nums_len];
+    
+    // 初始化边界
+    max_product[0] = min_product[0] = nums[0];
+    max_res = nums[0];
+    
+    int i;
+    for (i = 1; i < nums_len; i++) {
+        max_product[i] = max(max_product[i-1] * nums[i], nums[i]);
+        max_product[i] = max(max_product[i], min_product[i-1] * nums[i]);
+        min_product[i] = min(min_product[i-1] * nums[i], nums[i]);
+        min_product[i] = min(max_product[i-1] * nums[i], min_product[i]);
+        
+        if(max_product[i] > max_res){
+            max_res = max_product[i];
+        }
+    }
+    
+    return max_res;
+}

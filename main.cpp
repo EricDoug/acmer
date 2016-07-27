@@ -15,9 +15,11 @@ int main(int argc, const char * argv[]) {
     
     DynamicProgramming* dp = new DynamicProgramming;
     
-    string word1 = "a";
-    string word2 = "a";
-    int edit_distance = dp->edit_distance(word1, word2);
+//    string word1 = "a";
+//    string word2 = "a";
+    int a[8] = {1,0,-1,2,3,-5,-2};
+    vector<int> input(a, a+8);
+    int edit_distance = dp->mps(input);
     cout << edit_distance << endl;
     
     

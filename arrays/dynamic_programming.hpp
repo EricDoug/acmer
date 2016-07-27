@@ -27,6 +27,9 @@ public:
     //编辑距离
     int edit_distance(string word1, string word2);
     
+    // 最大连续乘积子序列
+    int mps(vector<int>& nums);
+    
     
     
     
