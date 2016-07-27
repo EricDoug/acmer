@@ -10,6 +10,9 @@
 
 using namespace std;
 
+/**************************
+ *     最大公共子序列       *
+ **************************/
 void DynamicProgramming::lcs(const char* A, const char* B, string& common_s) {
     int A_size = (int)strlen(A);
     int B_size = (int)strlen(B);
@@ -64,7 +67,9 @@ void DynamicProgramming::lcs(const char* A, const char* B, string& common_s) {
     
 }
 
-
+/**************************
+ *       编辑距离          *
+ **************************/
 int DynamicProgramming::edit_distance(string word1, string word2) {
     
     int word1_len = (int)word1.size();
@@ -109,7 +114,9 @@ int DynamicProgramming::edit_distance(string word1, string word2) {
     return d[word1_len][word2_len];
 }
 
-
+/**************************
+ *     乘积最大子序列       *
+ **************************/
 int DynamicProgramming::mps(vector<int>& nums) {
     int nums_len = (int)nums.size();
     int max_res;
