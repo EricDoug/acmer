@@ -30,6 +30,9 @@ public:
     // 最大连续乘积子序列
     int mps(vector<int>& nums);
     
+    // 最大子数组
+    int maxSubArray(vector<int> nums);
+    
     
     
     

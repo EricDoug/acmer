@@ -114,6 +114,7 @@ int DynamicProgramming::edit_distance(string word1, string word2) {
     return d[word1_len][word2_len];
 }
 
+
 /**************************
  *     乘积最大子序列       *
  **************************/
@@ -137,6 +138,31 @@ int DynamicProgramming::mps(vector<int>& nums) {
         
         if(max_product[i] > max_res){
             max_res = max_product[i];
+        }
+    }
+    
+    return max_res;
+}
+
+/**************************
+ *       最大子数组         *
+ **************************/
+int DynamicProgramming::maxSubArray(vector<int> nums){
+    
+    int nums_size = (int)nums.size();
+
+    int max_res;
+    int *max_array = new int[nums_size];
+    
+    // 初始化边界
+    max_array[0] = nums[0];
+    max_res = nums[0];
+    
+    for (int i = 1; i < nums_size; i++) {
+        max_array[i] = max(nums[i], max_array[i-1] + nums[i]);
+        
+        if (max_array[i] > max_res) {
+            max_res = max_array[i];
         }
     }
     

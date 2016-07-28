@@ -17,9 +17,9 @@ int main(int argc, const char * argv[]) {
     
 //    string word1 = "a";
 //    string word2 = "a";
-    int a[8] = {1,0,-1,2,3,-5,-2};
-    vector<int> input(a, a+8);
-    int edit_distance = dp->mps(input);
+    int a[9] = {-2, 2, -3, 4, -1, 2, 1, -5, 3};
+    vector<int> input(a, a+9);
+    int edit_distance = dp->maxSubArray(input);
     cout << edit_distance << endl;
     
     
