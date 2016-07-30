@@ -17,10 +17,14 @@ int main(int argc, const char * argv[]) {
     
 //    string word1 = "a";
 //    string word2 = "a";
-    int a[9] = {-2, 2, -3, 4, -1, 2, 1, -5, 3};
-    vector<int> input(a, a+9);
-    int edit_distance = dp->maxSubArray(input);
-    cout << edit_distance << endl;
+//    int a[9] = {-2, 2, -3, 4, -1, 2, 1, -5, 3};
+//    vector<int> input(a, a+9);
+//    int edit_distance = dp->maxSubArray(input);
+//    cout << edit_distance << endl;
+    
+    delete dp;
+    
+    
     
     
     return 0;
