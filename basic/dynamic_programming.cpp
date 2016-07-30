@@ -208,3 +208,24 @@ int DynamicProgramming::maxProfitK(const int* prices,int size,int K)
 }
 
 
+/**************************
+ *    改进股票最大收益2      *
+ **************************/
+int DynamicProgramming::maxProfitK2(const int*prices, int size, int K){
+    vector<vector<int>> dp(K+1, vector<int>(size, 0));
+    
+    int k,i;
+    int mx;
+    
+    for (k = 1; k <= K; k++) {
+        mx = dp[k-1][0] - prices[0];
+        for (i = 1; i < size; i++) {
+            dp[k][i] = max(dp[k][i-1], mx + prices[i]);
+            mx = max(mx, dp[k-1][i] - prices[i]);
+        }
+    }
+    
+    return dp[K][size - 1];
+}
+
+

@@ -7,23 +7,15 @@
 //
 
 #include <iostream>
-# include "dynamic_programming.hpp"
+#include "dp_test.hpp"
+
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
     
-    DynamicProgramming* dp = new DynamicProgramming;
-    
-//    string word1 = "a";
-//    string word2 = "a";
-//    int a[9] = {-2, 2, -3, 4, -1, 2, 1, -5, 3};
-//    vector<int> input(a, a+9);
-//    int edit_distance = dp->maxSubArray(input);
-//    cout << edit_distance << endl;
-    
-    delete dp;
-    
+    maxProfitK_test();
+        
     
     
     

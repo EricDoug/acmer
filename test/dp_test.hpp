@@ -10,5 +10,12 @@
 #define dp_test_hpp
 
 #include <stdio.h>
+#include "dynamic_programming.hpp"
+
+void edit_distance_test();
+
+void maxProfitK_test();
+
+
 
 #endif /* dp_test_hpp */

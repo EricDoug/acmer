@@ -39,6 +39,9 @@ public:
     // 股票最大收益问题2
     int maxProfitK(const int* prices, int size, int K);
     
+    // 改进的最多k次交易股票最大收益问题
+    int maxProfitK2(const int* prices, int size, int K);
+    
     
     
     
