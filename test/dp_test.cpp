@@ -30,6 +30,32 @@ void maxProfitK_test(){
     int res = dp->maxProfitK2(prices, sizeof(prices)/sizeof(int), 3);
     
     cout << res << endl;
+}
+
+int cubicle_move_test(){
+    
+    const int M = 4;
+    const int N = 5;
+    
+    vector<vector<int>> chess(M, vector<int>(N));
+    
+    //初始化棋盘
+    int i,j;
+    for (i = 0; i < M; i++)
+    {
+        for(j = 0; j < N; j++)
+        {
+            chess[i][j] = rand() % 100;
+        }
+    }
+    
+    Printer::matrix_printer(chess, M, N);
+    DynamicProgramming* dp = new DynamicProgramming;
+    
+    cout << dp->cubicle_move(chess, M, N) << endl;
+    cout << dp->cubicle_move2(chess, M, N) << endl;
+    delete dp;
     
     
+    return 0;
 }

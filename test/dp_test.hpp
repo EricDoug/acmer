@@ -9,12 +9,15 @@
 #ifndef dp_test_hpp
 #define dp_test_hpp
 
-#include <stdio.h>
+#include "pre_func.h"
 #include "dynamic_programming.hpp"
+#include "printer.hpp"
 
 void edit_distance_test();
 
 void maxProfitK_test();
+
+int cubicle_move_test();
 
 
 

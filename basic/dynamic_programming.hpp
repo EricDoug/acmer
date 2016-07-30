@@ -42,6 +42,12 @@ public:
     // 改进的最多k次交易股票最大收益问题
     int maxProfitK2(const int* prices, int size, int K);
     
+    // 走格子问题1
+    int cubicle_move(vector<vector<int>>& chess, int M, int N);
+    
+    // 使用滚动数组解走格子问题
+    int cubicle_move2(vector<vector<int>>& chess, int M, int N);
+    
     
     
     

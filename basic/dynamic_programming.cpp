@@ -228,4 +228,68 @@ int DynamicProgramming::maxProfitK2(const int*prices, int size, int K){
     return dp[K][size - 1];
 }
 
+/**************************
+ *        走格子问题        *
+ **************************/
+int DynamicProgramming::cubicle_move(vector<vector<int>>& chess, int M, int N)
+{
+    vector<vector<int>> dp(M, vector<int>(N));
+    int i,j,k;
+    // 初始化
+    for(i=0; i<M; i++)
+    {   int sum = 0;
+        for(k = 0; k <= i; k++)
+        {
+            sum += chess[k][0];
+        }
+        dp[i][0] = sum;
+    }
+    for(j = 0; j < N; j++ )
+    {
+        int sum = 0;
+        for(k = 0; k <= j; k++)
+        {
+            sum += chess[0][k];
+        }
+        dp[0][j] = sum;
+    }
+    for(i = 1; i < M; i++)
+    {
+        for (j = 1; j < N; j++)
+        {
+            dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + chess[i][j];
+        }
+    }
+    return dp[M-1][N-1];
+}
+
+int DynamicProgramming::cubicle_move2(vector<vector<int>>& chess, int M, int N)
+{
+    // 使用与列相等的行存储状态
+    vector<int> dp(N);
+    // 初始化
+    int i,j;
+    dp[0] = chess[0][0];
+    for (j = 1; j < N; j++) {
+        dp[j] = dp[j-1] + chess[0][j];
+    }
+    // 依次计算每行
+    for (i = 1; i < M; i++)
+    {
+        // 更新当前行的首状态
+        dp[0] += chess[i][0];
+        for (j = 1; j < N; j++)
+        {
+            // 取上方或者左边最小的数
+            if ( dp[j-1] < dp[j])
+            {
+                dp[j] = dp[j-1] + chess[i][j];
+            }
+            else {
+                dp[j] += chess[i][j];
+            }
+        }
+    }
+    return dp[N-1];
+}
 
