@@ -8,13 +8,15 @@
 
 #include "pre_func.h"
 #include "dp_test.hpp"
+#include "recursion_test.h"
 
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
     
-    cubicle_move_test();
+    //cubicle_move_test();
+    sqrt_test();
         
     
     
