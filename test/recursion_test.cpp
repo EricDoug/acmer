@@ -8,7 +8,7 @@
 
 #include "recursion_test.h"
 
-int recursion_test() {
+int sqrt_test() {
     
     Recursion* recursion = new Recursion;
     
