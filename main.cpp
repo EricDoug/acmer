@@ -9,6 +9,7 @@
 #include "pre_func.h"
 #include "dp_test.hpp"
 #include "recursion_test.h"
+#include "offergo_test.hpp"
 
 
 int main(int argc, const char * argv[]) {
@@ -16,8 +17,8 @@ int main(int argc, const char * argv[]) {
     std::cout << "Hello, World!\n";
     
     //cubicle_move_test();
-    sqrt_test();
-        
+    //sqrt_test();
+    netease_weight_cmp_test();
     
     
     
