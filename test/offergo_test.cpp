@@ -28,10 +28,23 @@ int netease_weight_cmp_test() {
 //    
 //    cout << res << endl;
     
+    
     Printer::matrix_printer(records, 4, 2);
     
     
     
     //2,3,[[1,2],[2,4],[1,3],[4,3]],4
+    return 0;
+}
+
+
+int netease_findkth_test()
+{
+    int input[] = {1,3,5,2,2};
+    vector<int> x(input, input+5);
+    
+    Finder* finder = new Finder();
+    int res = finder->findKth(x, 5, 3);
+    cout << res << endl;
     return 0;
 }

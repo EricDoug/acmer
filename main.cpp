@@ -18,7 +18,9 @@ int main(int argc, const char * argv[]) {
     
     //cubicle_move_test();
     //sqrt_test();
-    netease_weight_cmp_test();
+    //netease_weight_cmp_test();
+    
+    netease_findkth_test();
     
     
     

@@ -13,4 +13,6 @@
 #include "netease.hpp"
 
 int netease_weight_cmp_test();
+// find kth
+int netease_findkth_test();
 #endif /* offergo_test_hpp */

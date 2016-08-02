@@ -33,6 +33,22 @@ int Finder::quickFind(vector<int> &a, int left, int right, int k)
     }
     a[i] = pivot;
     
+    int big_num = right - i;
     
+    if (k - big_num - 1 == 0)
+    {
+        return pivot;
+    }
+    else if (k - big_num - 1 > 0){
+        return quickFind(a, left, i - 1, k - big_num -1);
+    }
+    else {
+        return quickFind(a, i + 1, right, k);
+    }
     
+}
+
+
+int Finder::findKth(vector<int>& a,int n, int K) {
+    return quickFind(a, 0, n - 1, K);
 }
