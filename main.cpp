@@ -22,7 +22,9 @@ int main(int argc, const char * argv[]) {
     //netease_weight_cmp_test();
     
 //    netease_findkth_test();
-    left_rotate_test();
+    //left_rotate_test();
+    
+    permutation_test();
     
     
     

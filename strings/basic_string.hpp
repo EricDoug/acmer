@@ -22,7 +22,11 @@ public:
     void leftRotateString(char* s, int n, int m);
     
     // 字符交换
-    void swap(char* s1, char* s2);
+    //void swap(char* s1, char* s2);
+    
+    // 字符串或者数组全排列
+    void permutation(int* a, int size, int n);
+    
     
     
 };

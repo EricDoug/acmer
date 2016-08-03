@@ -36,6 +36,13 @@ public:
                 cout << endl;
         }
     }
+    
+    static void int_printer(int* a, int size){
+        for (int i = 0; i < size; i++) {
+            cout << a[i] << "\t";
+        }
+        cout << endl;
+    }
 
 private:
     

@@ -14,5 +14,7 @@
 
 int left_rotate_test();
 
+int permutation_test();
+
 
 #endif /* strings_test_hpp */
