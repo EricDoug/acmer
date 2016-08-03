@@ -10,6 +10,7 @@
 #include "dp_test.hpp"
 #include "recursion_test.h"
 #include "offergo_test.hpp"
+#include "strings_test.hpp"
 
 
 int main(int argc, const char * argv[]) {
@@ -20,7 +21,8 @@ int main(int argc, const char * argv[]) {
     //sqrt_test();
     //netease_weight_cmp_test();
     
-    netease_findkth_test();
+//    netease_findkth_test();
+    left_rotate_test();
     
     
     

@@ -15,7 +15,13 @@ class Printer{
 public:
     Printer();
     ~Printer();
-    void arrays_printer(const char* s);
+    static void arrays_printer(const char* s)
+    {
+        for (int i = 0; i < strlen(s); i ++) {
+            cout << s[i] << '\t';
+        }
+        cout << endl;
+    }
     template <typename T>
     static void matrix_printer(vector< vector<T>>& matrix, int row, int col)
     {
