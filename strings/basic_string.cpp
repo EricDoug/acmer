@@ -65,3 +65,59 @@ void Basic_String::permutation(int *a, int size, int n)
         swap(a[i], a[n]);
     }
 }
+
+
+/*****************************
+ *           空格替换         *
+ *****************************/
+void Basic_String::replaceSpace(char *str, int length)
+{
+    
+    bool is_char = true;
+    int space_num = 0;
+    cout << str << endl;
+    
+    // 计算空格数目
+    for(int i = 0; i < length; i++)
+    {
+        if(str[i] != ' ')
+        {
+            //is_char = true;
+            continue;
+        }
+        else
+        {
+            //if(is_char)
+            //{
+                space_num++;
+                is_char = false;
+                continue;
+            //}
+        }
+    }
+    
+    // 替换
+    for(int j=length-1;j>0; j--)
+    {
+        if(str[j] != ' ')
+        {
+            is_char = true;
+            cout << j+2*space_num << endl;
+            str[j+2*space_num] = str[j];
+            continue;
+        }
+        else
+        {
+            //if(is_char)
+           // {
+                str[j+2*space_num] = '0';
+                str[j+2*space_num - 1] = '2';
+                str[j+2*space_num -2] = '%';
+                //is_char = false;
+                space_num--;
+                continue;
+            //}
+        }
+    }
+    
+}

@@ -24,7 +24,8 @@ int main(int argc, const char * argv[]) {
 //    netease_findkth_test();
     //left_rotate_test();
     
-    permutation_test();
+    //permutation_test();
+    spaceReplace_test();
     
     
     

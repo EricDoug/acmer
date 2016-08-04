@@ -33,3 +33,15 @@ int permutation_test(){
     basic_string->permutation(a, sizeof(a)/sizeof(int), 0);
     return 0;
 }
+
+int spaceReplace_test(){
+    
+    char *str = " helloworld";
+    cout << str << endl;
+    cout << strlen(str) << endl;
+    int length = strlen(str) / sizeof(char);
+    
+    Basic_String* basic_string = new Basic_String;
+    basic_string->replaceSpace(str, length);
+    return 0;
+}

@@ -16,5 +16,6 @@ int left_rotate_test();
 
 int permutation_test();
 
+int spaceReplace_test();
 
 #endif /* strings_test_hpp */

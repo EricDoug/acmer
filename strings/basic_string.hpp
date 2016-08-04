@@ -27,6 +27,8 @@ public:
     // 字符串或者数组全排列
     void permutation(int* a, int size, int n);
     
+    // 替换空格
+    void replaceSpace(char* str, int length);
     
     
 };
