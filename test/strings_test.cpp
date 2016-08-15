@@ -45,3 +45,30 @@ int spaceReplace_test(){
     basic_string->replaceSpace(str, length);
     return 0;
 }
+
+
+int regMatch_test(){
+
+    char str[] = "a";
+    char pattern1[] = ".*";
+    char pattern2[] = "ab*a";
+    
+    Basic_String* basic_string = new Basic_String;
+    
+    if(str == NULL || pattern1 == NULL) {
+        cout << false << endl;
+    }
+    else {
+        cout << basic_string->regMatch(str, pattern1) << endl;
+    }
+    
+
+//    if(str == NULL || pattern2 == NULL) {
+//        cout << false << endl;
+//    }
+//    else {
+//        cout <<   basic_string->regMatch(str, pattern2) << endl;
+//    }
+//    
+    return 0;
+}

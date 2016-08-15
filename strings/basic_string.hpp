@@ -30,6 +30,8 @@ public:
     // 替换空格
     void replaceSpace(char* str, int length);
     
+    // 正则匹配
+    bool regMatch(const char* str, const char* pattern);
     
 };
 

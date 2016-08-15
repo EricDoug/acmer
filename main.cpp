@@ -25,7 +25,9 @@ int main(int argc, const char * argv[]) {
     //left_rotate_test();
     
     //permutation_test();
-    spaceReplace_test();
+    //spaceReplace_test();
+    
+    regMatch_test();
     
     
     

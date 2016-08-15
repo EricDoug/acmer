@@ -18,4 +18,6 @@ int permutation_test();
 
 int spaceReplace_test();
 
+int regMatch_test();
+
 #endif /* strings_test_hpp */
