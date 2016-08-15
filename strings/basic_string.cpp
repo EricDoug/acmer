@@ -150,3 +150,91 @@ bool Basic_String::regMatch(const char *str, const char *pattern) {
     
     return false;
 }
+
+
+/*******************************
+ *     判断字符是否是数字         *
+ *******************************/
+bool Basic_String::isDigit(char x){
+    
+    if (x >= '0' && x <= '9') {
+        return true;
+    }
+    else
+        return false;
+}
+
+/******************************
+ *     判断字符串是否是数值      *
+ *****************************/
+
+bool Basic_String::isNumeric(char *str){
+    
+    if (str == NULL) {
+        return false;
+    }
+    
+    int index = 0;
+    
+    // 判断正负号
+    if (str[index] == '+' || str[index] == '-') {
+        str++;
+    }
+    
+    if (str[index] == '\0') {
+        return false;
+    }
+    
+    // 扫描数字
+    while(isDigit(str[index])) {
+        index++;
+    }
+    
+    // 判断是科学计数法还是小数
+    if (str[index] != '\0') {
+        // 若是小数
+        if (str[index] == '.') {
+            index++;
+            while (isDigit(str[index])) {
+                index++;
+            }
+            if (str[index] == 'e' || str[index] == 'E') {
+                // 正负判断
+                index++;
+                if (str[index] == '+' || str[index] == '-') {
+                    index ++;
+                }
+                if (str[index] == '\0') {
+                    return false;
+                }
+                
+                while(isDigit(str[index])) {
+                    index++;
+                }
+                
+                return str[index] == '\0' ? true:false;
+            }
+        }
+        // 若是科学数
+        else if(str[index] == 'e' || str[index] == 'E'){
+            index++;
+            // 正负判断
+            if (str[index] == '+' || str[index] == '-') {
+                index++;
+            }
+            if (str[index] == '\0') {
+                return false;
+            }
+            
+            while(isDigit(str[index])) {
+                index++;
+            }
+            return str[index] == '\0' ? true:false;
+        }
+    }
+    
+    return str[index] == '\0' ? true:false;
+}
+
+
+

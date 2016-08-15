@@ -33,6 +33,11 @@ public:
     // 正则匹配
     bool regMatch(const char* str, const char* pattern);
     
+    // 判断字符串是否是数字
+    bool isDigit(char x);
+    
+    // 判断字符串是否是数值
+    bool isNumeric(char* string);
 };
 
 #endif /* basic_string_hpp */

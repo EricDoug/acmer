@@ -27,8 +27,8 @@ int main(int argc, const char * argv[]) {
     //permutation_test();
     //spaceReplace_test();
     
-    regMatch_test();
-    
+    // regMatch_test();
+    isNumeric_test();
     
     
     return 0;

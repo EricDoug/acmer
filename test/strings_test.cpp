@@ -72,3 +72,11 @@ int regMatch_test(){
 //    
     return 0;
 }
+
+int isNumeric_test() {
+    
+    Basic_String* basic_string = new Basic_String;
+    cout << basic_string->isNumeric("123.45e+6") << endl;
+    
+    return 0;
+}

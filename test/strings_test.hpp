@@ -20,4 +20,6 @@ int spaceReplace_test();
 
 int regMatch_test();
 
+int isNumeric_test();
+
 #endif /* strings_test_hpp */
