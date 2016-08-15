@@ -38,6 +38,9 @@ public:
     
     // 判断字符串是否是数值
     bool isNumeric(char* string);
+    
+    // 确定字符互异
+    bool checkDifferent(string initString);
 };
 
 #endif /* basic_string_hpp */

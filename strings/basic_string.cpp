@@ -236,5 +236,26 @@ bool Basic_String::isNumeric(char *str){
     return str[index] == '\0' ? true:false;
 }
 
+/********************************
+ *         确定字符互异           *
+ ********************************/
+bool Basic_String::checkDifferent(string initString){
+    
+    int strLen = (int)initString.size();
+    
+    int isDuplicate = 0;
+    for (int i = 0; i < strLen; i++) {
+        
+        int val = initString[i] - 'a';
+        if((isDuplicate & (1 << val)) > 0){
+            return false;
+        }
+        
+        isDuplicate |= (1 << val);
+    }
+    return true;
+    
+}
+
 
 
