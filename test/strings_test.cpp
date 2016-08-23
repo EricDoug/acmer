@@ -80,3 +80,12 @@ int isNumeric_test() {
     
     return 0;
 }
+
+int hex2decimal_test() {
+
+    Basic_String* basic_string = new Basic_String;
+    basic_string->hex2decimal();
+    
+    return 0;
+
+}

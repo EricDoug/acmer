@@ -9,6 +9,9 @@
 #include "linked_list.hpp"
 
 
+/*****************************
+ *    使用栈打印从头到尾的链表   *
+ *****************************/
 vector<int> Linked_List::printListFromTailToHead(struct ListNode *head){
     
     stack<ListNode*> listStack;
@@ -27,6 +30,22 @@ vector<int> Linked_List::printListFromTailToHead(struct ListNode *head){
         pNode = listStack.top(); // 取出栈顶元素
         results.push_back(pNode->val);
         listStack.pop();
+    }
+    
+    return results;
+}
+
+/***********************************
+ *     使用递归打印从头到尾的链表      *
+ ***********************************/
+vector<int> Linked_List::printListFromT2H_recur(struct ListNode *head){
+    vector<int> results;
+    
+    if (head != NULL) {
+        if (head->next != NULL) {
+            printListFromT2H_recur(head->next);
+        }
+        results.push_back(head->val);
     }
     
     return results;

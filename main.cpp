@@ -28,7 +28,9 @@ int main(int argc, const char * argv[]) {
     //spaceReplace_test();
     
     // regMatch_test();
-    isNumeric_test();
+    // isNumeric_test();
+    
+    hex2decimal_test();
     
     
     return 0;

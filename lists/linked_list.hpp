@@ -28,6 +28,9 @@ private:
 public:
     // 从尾到头打印链表
     vector<int> printListFromTailToHead(struct ListNode* head);
+    
+    // 使用递归从尾到头打印链表
+    vector<int> printListFromT2H_recur(struct ListNode* head);
 };
 
 #endif /* linked_list_hpp */

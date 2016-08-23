@@ -22,4 +22,6 @@ int regMatch_test();
 
 int isNumeric_test();
 
+int hex2decimal_test();
+
 #endif /* strings_test_hpp */

@@ -257,5 +257,40 @@ bool Basic_String::checkDifferent(string initString){
     
 }
 
+/**********************************
+ *          进制转换               *
+ **********************************/
+int Basic_String::hex2decimal() {
+    
+    string input;
+    while(getline(cin, input)){
+        
+        int str_len = (int)input.length();
+        int res = 0;
+        for(int i = str_len - 1; i > 1; i--) {
+            char cur = input[i];
+            //cout << cur << endl;
+            if(cur >= 'A' && cur <= 'F'){
+                //cout << pow(16, (str_len - i -1))  << endl;
+                res += (10 + cur - 'A') * pow(16, (str_len - i -1));
+                cout << res << endl;
+            }
+            else if(cur >= 'a' && cur <= 'f') {
+                res += (10 + cur - 'a')* pow(16, (str_len - i -1));
+            }
+            else {
+                res += (cur - '0') * pow(16, (str_len - i - 1));
+                cout << cur << endl;
+                cout << pow(16, (str_len - i - 1)) << endl;
+                cout << (cur - '0') * pow(16, (str_len - i - 1)) << endl;
+                cout << res << endl;
+            }
+        }
+        cout << res << endl;
+    }
+    
+    return 0;
+}
+
 
 

@@ -41,6 +41,11 @@ public:
     
     // 确定字符互异
     bool checkDifferent(string initString);
+    
+    // 进制转换
+    int hex2decimal();
 };
+
+
 
 #endif /* basic_string_hpp */
