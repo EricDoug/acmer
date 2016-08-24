@@ -11,6 +11,7 @@
 #include "recursion_test.h"
 #include "offergo_test.hpp"
 #include "strings_test.hpp"
+#include "deques.hpp"
 
 
 int main(int argc, const char * argv[]) {
@@ -30,7 +31,8 @@ int main(int argc, const char * argv[]) {
     // regMatch_test();
     // isNumeric_test();
     
-    hex2decimal_test();
+    //hex2decimal_test();
+    getDuplicateNum();
     
     
     return 0;
