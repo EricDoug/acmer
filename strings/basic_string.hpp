@@ -44,6 +44,9 @@ public:
     
     // 进制转换
     int hex2decimal();
+    
+    // 句子逆序
+    int reverseSentence();
 };
 
 

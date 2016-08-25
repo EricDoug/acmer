@@ -89,3 +89,11 @@ int hex2decimal_test() {
     return 0;
 
 }
+
+int reverseSentence_test() {
+    
+    Basic_String* basic_string = new Basic_String;
+    basic_string->reverseSentence();
+    
+    return 0;
+}

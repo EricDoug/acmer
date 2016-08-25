@@ -31,6 +31,11 @@ public:
     
     // 使用递归从尾到头打印链表
     vector<int> printListFromT2H_recur(struct ListNode* head);
+    
+    // 反转链表
+    ListNode* reverseList(ListNode* pHead);
+    
+    
 };
 
 #endif /* linked_list_hpp */

@@ -14,6 +14,7 @@
 #include "deques.hpp"
 
 
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
@@ -32,7 +33,8 @@ int main(int argc, const char * argv[]) {
     // isNumeric_test();
     
     //hex2decimal_test();
-    getDuplicateNum();
+    //getDuplicateNum();
+    reverseSentence_test();
     
     
     return 0;

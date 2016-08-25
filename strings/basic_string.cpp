@@ -293,4 +293,36 @@ int Basic_String::hex2decimal() {
 }
 
 
+/**********************************
+ *          句子逆序               *
+ *********************************/
+int Basic_String::reverseSentence() {
+    string input;
+    while(getline(cin, input)){
+        
+        int input_len = input.length();
+        // 从后往前扫描单词
+        int flag = 1;
+        int word_end = 0;
+        for(int j=input_len - 1; j >0; --j){
+            if(input[j] != ' ' && flag == 1){
+                word_end = j; // 记录单词的末尾
+                flag = 0;
+            }
+            else if(input[j] == ' ' && flag == 0)
+            {
+                flag = 1;
+                cout << input.substr(j+1, word_end) << ' ';
+                word_end = j - 1;
+            }
+            else
+                continue;
+        }
+        cout << input.substr(0, word_end) << endl;
+        cin.ignore();
+    }
+    
+    return 0;
+}
+
 

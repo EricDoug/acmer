@@ -51,3 +51,23 @@ vector<int> Linked_List::printListFromT2H_recur(struct ListNode *head){
     return results;
     
 }
+
+/*******************************
+ *          反转链表            *
+ *******************************/
+ListNode* Linked_List::reverseList(ListNode* pHead){
+    
+    ListNode* reverseList_head = NULL;
+    ListNode* pCur = pHead;
+    ListNode* pPre = NULL;
+    while (pCur != NULL) {
+        ListNode* pNext = pCur->next;
+        if (pNext == NULL) {
+            reverseList_head = pCur;
+        }
+        pCur->next = pPre;
+        pPre = pCur;
+        pCur = pNext;
+    }
+    return reverseList_head;
+}

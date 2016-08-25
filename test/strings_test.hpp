@@ -24,4 +24,6 @@ int isNumeric_test();
 
 int hex2decimal_test();
 
+int reverseSentence_test();
+
 #endif /* strings_test_hpp */
