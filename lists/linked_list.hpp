@@ -21,9 +21,9 @@ struct ListNode {
 };
 
 class Linked_List {
-private:
-    Linked_List();
-    ~Linked_List();
+//private:
+//    Linked_List();
+//    ~Linked_List();
     
 public:
     // 从尾到头打印链表
@@ -35,6 +35,18 @@ public:
     // 反转链表
     ListNode* reverseList(ListNode* pHead);
     
+    // 合并两个排序的链表
+    ListNode* merge(ListNode* pHead1, ListNode* pHead2);
+    ListNode* merge2(ListNode* pHead1, ListNode* pHead2);  // 使用非递归
+    
+    // 计算链表长度
+    int length(ListNode* pHead);
+    
+    // 删除重复元素
+    ListNode* deleteDuplicateNode(ListNode* pHead);
+    
+    // 删除链表中所有的重复的结点
+    ListNode* deleteDuplicateNode2(ListNode* pHead);
     
 };
 

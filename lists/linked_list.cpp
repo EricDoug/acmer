@@ -71,3 +71,150 @@ ListNode* Linked_List::reverseList(ListNode* pHead){
     }
     return reverseList_head;
 }
+
+/***************************
+ *    合并两个排序的链表      *
+ **************************/
+ListNode* Linked_List::merge(ListNode* pHead1,ListNode* pHead2) {
+    // merge后的链表
+    ListNode* pMerge = NULL;
+    if (pHead1 == NULL) {
+        return pHead2;
+    }else if(pHead2 == NULL)
+        return pHead1;
+    
+    // 选择较小的加入到合并的链表
+    if (pHead1->val < pHead2->val) {
+        pMerge = pHead1;
+        
+        pMerge->next = merge(pHead1->next, pHead2);
+    }
+    else {
+        pMerge = pHead2;
+        pMerge->next = merge(pHead2->next, pHead1);
+    }
+    
+    return pMerge;
+}
+
+/**************************
+ *       计算链表长度       *
+ **************************/
+int Linked_List::length(ListNode* pHead) {
+    
+    unsigned int len = 0;
+    ListNode* pNode = pHead;
+    while (pHead != NULL) {
+        ++len;
+        pNode = pNode->next;
+    }
+    
+    return len;
+}
+
+
+/******************************
+ *   合并两个排序的链表(非递归)   *
+ ******************************/
+ListNode* Linked_List::merge2(ListNode* pHead1,ListNode* pHead2) {
+    
+    if (pHead1 == NULL) {
+        return pHead2;
+    }
+    else if(pHead2 == NULL) {
+        return pHead1;
+    }
+    
+    int p1_len = length(pHead1);
+    int p2_len = length(pHead2);
+    
+    int p_diff = p1_len - p2_len;
+    ListNode* pLong = pHead1;
+    ListNode* pShort = pHead2;
+    
+    if (p1_len < p2_len) {
+        p_diff = p2_len - p1_len;
+        pLong = pHead2;
+        pShort = pHead1;
+    }
+    
+    for (int i=0; i < p_diff; i++) {
+        pLong = pLong->next;
+    }
+    while ((pLong != NULL) && (pShort != NULL)) {
+        if (pLong->val == pShort->val ) {
+            return pLong;
+        }
+        pLong = pLong->next;
+        pShort = pShort->next;
+    }
+    
+    return NULL;
+}
+
+/*******************************
+ *        排序链表中去重         *
+ ******************************/
+ListNode* Linked_List::deleteDuplicateNode(ListNode *pHead) {
+
+    if (pHead == NULL || pHead->next == NULL) {
+        return pHead;
+    }
+    
+    ListNode* pPre = pHead;
+    ListNode* pCur = pHead;
+    
+    while (pPre != NULL) {
+        pCur = pPre->next;
+        if (pCur && (pCur->val == pPre->val)) {
+            pPre->next = pCur->next;
+            delete pCur;
+        }
+        else {
+            pPre = pCur;
+        }
+    }
+    
+    return pHead;
+}
+
+
+/********************************
+ *    删除链表中所有的重复的结点    *
+ *******************************/
+ListNode* Linked_List::deleteDuplicateNode2(ListNode* pHead) {
+    if (pHead == NULL || pHead->next == NULL) {
+        return pHead;
+    }
+    
+    ListNode* pPre = pHead;
+    ListNode* pCur = pPre->next;
+    ListNode* pNext;
+    bool bDup;
+    while (pCur) {
+        pNext = pCur->next;
+        bDup = false;
+        while (pNext && (pCur->val == pNext->val)) {
+            pPre->next = pNext;
+            delete pCur;
+            pCur = pNext;
+            pNext = pCur->next;
+            bDup = true;
+        }
+        if (bDup) {
+            pPre->next = pNext;
+            delete pCur;
+        }
+        else {
+            pPre = pCur;
+        }
+        
+        pCur = pNext;
+    }
+    
+    return pHead;
+    
+    
+}
+
+
