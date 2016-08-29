@@ -12,6 +12,8 @@
 #include "offergo_test.hpp"
 #include "strings_test.hpp"
 #include "deques.hpp"
+#include <fstream>
+
 
 
 
@@ -34,8 +36,9 @@ int main(int argc, const char * argv[]) {
     
     //hex2decimal_test();
     //getDuplicateNum();
-    reverseSentence_test();
+    //reverseSentence_test();
     
-    
+    //filereader();
+    //B_small();
     return 0;
 }
