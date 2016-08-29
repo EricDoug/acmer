@@ -26,4 +26,6 @@ int hex2decimal_test();
 
 int reverseSentence_test();
 
+int recog_ip_mask_test();
+
 #endif /* strings_test_hpp */

@@ -325,4 +325,228 @@ int Basic_String::reverseSentence() {
     return 0;
 }
 
+/*********************************
+ *       识别有效的子网掩码         *
+ *********************************/
+bool Basic_String::check_mask(string mask) {
+    int len = mask.length();
+    
+    
+    int start = 0;
+    int mask_pos = 0;
+    vector<int> mask_int;
+    string mask_str;
+    while(mask_pos != string::npos)
+    {
+        mask_pos = mask.find_first_of('.', (start+1));
+        mask_str = mask.substr(start, (mask_pos - start));
+        start = mask_pos + 1;
+        char *end;
+        int mask2int = static_cast<int>(strtol(mask_str.c_str(), &end, 10));
+        mask_int.push_back(mask2int);
+    }
+    
+    if(mask_int.size() != 4)
+    {
+        return false;
+    }
+    
+    if(mask_int[0] == 255)
+    {
+        if (mask_int[1] == 255)
+        {
+            if(mask_int[2] == 255)
+            {
+                if (mask_int[3] == 254 || mask_int[3] == 252 || mask_int[3] == 248 || mask_int[3] == 240 ||
+                    mask_int[3] == 224 || mask_int[3] == 192 || mask_int[3] == 128 || mask_int[3] == 0)
+                {
+                    
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                if (mask_int[2] == 254 || mask_int[2] == 252 || mask_int[2] == 248 || mask_int[2] == 240 ||
+                    mask_int[2] == 224 || mask_int[2] == 192 || mask_int[2] == 128 || mask_int[2] == 0 )
+                {
+                    if (mask_int[3] == 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (mask_int[1] == 254 || mask_int[1] == 252 || mask_int[1] == 248 || mask_int[1] == 240 ||
+                mask_int[1] == 224 || mask_int[1] == 192 || mask_int[1] == 128 || mask_int[1] == 0)
+            {
+                if (mask_int[2] == 0 && mask_int[3] == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        
+        
+    }
+    else
+    {
+        if (mask_int[0] == 254 || mask_int[0] == 252 || mask_int[0] == 248 || mask_int[0] == 240 ||
+            mask_int[0] == 224 || mask_int[0] == 192 || mask_int[0] == 128 || mask_int[0] == 0)
+        {
+            if (mask_int[3] == 0 && mask_int[2] == 0 && mask_int[1] == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+    
+    
+    return false;
+}
+
+/**********************************
+ *          检测IP是否合法          *
+ **********************************/
+bool Basic_String::check_ip(string ip)
+{
+    
+    int start = 0;
+    int ip_pos = 0;
+    while (ip_pos != string::npos)
+    {
+        ip_pos = ip.find_first_of('.',start);
+        if(ip_pos == 0 || ip[ip_pos+1] == '.')
+        {
+            return false;
+        }
+        else
+        {
+            start = ip_pos + 1;
+        }
+    }
+    
+    return true;
+}
+
+/**********************************
+ *        识别有效的IP和掩码         *
+ **********************************/
+void Basic_String::recognize_ip_mask() {
+
+    string input;
+    int result[7] = {0};
+    while (cin >> input)
+    {
+        // 确定波兰号的位置
+        
+        int dash_pos = input.find_first_of('~', 0);
+        int len = input.length();
+        string ip = input.substr(0, dash_pos);
+        // cout << ip << endl;
+        string mask = input.substr((dash_pos+1), (len-dash_pos));
+        // cout << mask << endl;
+        
+        // 对IP与私网IP进行分类
+        
+        vector<int> ip_int;
+        int start = 0;
+        int ip_pos = 0;
+        while(ip_pos != string::npos)
+        {
+            ip_pos = ip.find_first_of('.', start);
+            string ip_str = ip.substr(start, (ip_pos - start));
+            if (ip[start+1] == '.') {
+                
+            }
+            start = ip_pos + 1;
+            // string to int
+            char* ip_end;
+            int ip2int = static_cast<int>(strtol(ip_str.c_str(), &ip_end, 10));
+            ip_int.push_back(ip2int);
+        }
+        
+        
+        if(check_ip(ip) && (ip_int[0] < 0 || ip_int[1] < 0 || ip_int[2] < 0 || ip_int[3] < 0))
+            result[5] += 1;  // 不合法ip
+        else if(check_ip(ip) && ip_int[0] >= 1 && ip_int[0] <= 126 && check_mask(mask))
+        {
+            if(ip_int[0] == 10)
+            {
+                result[6] += 1; // 私有IP, 10网段
+                
+            }
+            
+            
+            result[0] += 1; // A类IP
+            
+        }
+        else if(check_ip(ip) && ip_int[0] >= 128 && ip_int[0] <= 191 && check_mask(mask))
+        {
+            if(ip_int[0] == 172)
+            {
+                if (ip_int[1] >= 16 && ip_int[1] <=31)
+                {
+                    result[6] += 1; // 私有IP， 172网段
+                }
+            }
+                
+               
+           
+            result[1] += 1;  // B类IP
+        }
+        else if(check_ip(ip) && ip_int[0] >= 192 && ip_int[0] <= 223 && check_mask(mask))
+        {
+            
+            if(ip_int[0] == 192)
+            {
+                
+                if (ip_int[1] == 168) {
+                    result[6] += 1;  // 私有IP， 192网段
+                }
+                
+            }
+        
+            result[2] += 1; // C类IP
+        }
+        else if(check_ip(ip) && ip_int[0] >= 224 && ip_int[0] <= 239 && check_mask(mask))
+        {
+            result[3] += 1; // D类IP
+        }
+        else if(check_ip(ip) && ip_int[0] >= 240 && ip_int[0] <= 255 && check_mask(mask))
+        {
+            result[4] += 1;  // E类ip
+        }
+        else if(!check_mask(mask) || !check_ip(ip)){
+            result[5] += 1;  // 不合法子网掩码
+        }
+        
+        
+        for(int i = 0; i < 7;i++) {
+            cout << result[i] << ' ';
+        }
+        cout << endl;
+        
+    }
+    
+    
+    
+}
 

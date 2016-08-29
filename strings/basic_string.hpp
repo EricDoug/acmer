@@ -47,6 +47,15 @@ public:
     
     // 句子逆序
     int reverseSentence();
+    
+    // 识别有效的IP地址，并进行分类统计
+    void recognize_ip_mask();
+    
+    // 检测子网掩码是否合法
+    bool check_mask(string mask);
+    
+    // 检测ip是否合法
+    bool check_ip(string ip);
 };
 
 

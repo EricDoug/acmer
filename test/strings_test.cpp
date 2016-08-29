@@ -97,3 +97,10 @@ int reverseSentence_test() {
     
     return 0;
 }
+
+int recog_ip_mask_test(){
+    
+    Basic_String* basic_string = new Basic_String;
+    basic_string->recognize_ip_mask();
+    return 0;
+}

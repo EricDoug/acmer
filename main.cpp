@@ -40,5 +40,7 @@ int main(int argc, const char * argv[]) {
     
     //filereader();
     //B_small();
+    
+    recog_ip_mask_test();
     return 0;
 }
