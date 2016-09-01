@@ -12,6 +12,7 @@
 #include "offergo_test.hpp"
 #include "strings_test.hpp"
 #include "deques.hpp"
+#include "numerics_test.hpp"
 #include <fstream>
 
 
@@ -41,6 +42,11 @@ int main(int argc, const char * argv[]) {
     //filereader();
     //B_small();
     
-    recog_ip_mask_test();
+//    recog_ip_mask_test();
+    gcd_test();
+    
+    
+    
+    
     return 0;
 }

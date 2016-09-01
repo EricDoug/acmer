@@ -57,3 +57,23 @@ double Recursion::mysqrt(double a)
     
     return reciprocal(x);
 }
+
+/*******************************
+ *        使用递归算平方根        *
+ *******************************/
+double Recursion::sqrt_recur(double a) {
+    if (a < 1e-6) {  // 负数或者0， 则直接返回0
+        return 0;
+    }
+    
+    double x = a / 2;
+    double t = a;
+    
+    // 使用递归
+    while (fabs(x - t) > 1e-6) {
+        t = x;
+        x = (x+a/x) / 2;
+    }
+    return x;
+    
+}

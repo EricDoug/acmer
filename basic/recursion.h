@@ -20,6 +20,10 @@ public:
     
     // 平方根算法
     double mysqrt(double a);
+    
+    // 使用递归算平方根
+    double sqrt_recur(double a);
+    
     // 倒数算法
     double reciprocal(double a);
     
