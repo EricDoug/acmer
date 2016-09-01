@@ -43,8 +43,8 @@ int main(int argc, const char * argv[]) {
     //B_small();
     
 //    recog_ip_mask_test();
-    gcd_test();
-    
+    //gcd_test();
+    recur_count_test();
     
     
     

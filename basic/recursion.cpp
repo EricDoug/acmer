@@ -77,3 +77,21 @@ double Recursion::sqrt_recur(double a) {
     return x;
     
 }
+
+/******************************
+ *        计算迭代次数          *
+ ******************************/
+int Recursion::recur_count(int n) {
+    cnt++;
+    if (n == 0) {
+        return 1;
+    } else if(n == 1) {
+        return 2;
+    }
+    else
+        return recur_count(n-1) + recur_count(n-2);
+}
+
+int Recursion::getCnt() {
+    return this->cnt;
+}

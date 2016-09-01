@@ -27,6 +27,14 @@ public:
     // 倒数算法
     double reciprocal(double a);
     
+    // 计算迭代次数
+    int recur_count(int n);
+    
+    int getCnt();
+    
+private:
+    int cnt=0;
+    
 };
 
 #endif /* defined(__acmer__recursion__) */

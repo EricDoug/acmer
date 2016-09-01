@@ -20,3 +20,14 @@ int sqrt_test() {
     
     return 0;
 }
+
+
+
+int recur_count_test() {
+    
+    Recursion* recursion = new Recursion;
+    recursion->recur_count(8);
+    cout << recursion->getCnt() << endl;
+    
+    return 0;
+}

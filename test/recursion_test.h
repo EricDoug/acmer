@@ -14,4 +14,6 @@
 
 int sqrt_test();
 
+int recur_count_test();
+
 #endif /* defined(__acmer__recursion_test__) */
