@@ -16,4 +16,7 @@ int sqrt_test();
 
 int recur_count_test();
 
+// 每次上2级台阶
+int countWays(int n);
+
 #endif /* defined(__acmer__recursion_test__) */

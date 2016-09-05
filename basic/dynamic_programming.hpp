@@ -48,6 +48,9 @@ public:
     // 使用滚动数组解走格子问题
     int cubicle_move2(vector<vector<int>>& chess, int M, int N);
     
+    // 走台阶
+    int step_count(int n);
+    
     
     
 };

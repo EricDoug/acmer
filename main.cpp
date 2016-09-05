@@ -13,6 +13,7 @@
 #include "strings_test.hpp"
 #include "deques.hpp"
 #include "numerics_test.hpp"
+#include "basic_math_test.hpp"
 #include <fstream>
 
 
@@ -44,8 +45,9 @@ int main(int argc, const char * argv[]) {
     
 //    recog_ip_mask_test();
     //gcd_test();
-    recur_count_test();
-    
+    //recur_count_test();
+    // step_count_test();
+    factor_count_test();
     
     
     return 0;

@@ -293,3 +293,23 @@ int DynamicProgramming::cubicle_move2(vector<vector<int>>& chess, int M, int N)
     return dp[N-1];
 }
 
+/*******************************
+ *           走台阶             *
+ *******************************/
+int DynamicProgramming::step_count(int n) {
+    
+    if(n == 1)
+        return 1;
+    
+    if(n == 2)
+       return 2;
+    
+    if(n == 3)
+       return 4;
+       
+    if(n >= 4)
+       return step_count(n-3) + step_count(n-2) + step_count(n-1);
+       
+    return 0;
+}
+

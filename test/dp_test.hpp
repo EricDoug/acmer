@@ -19,6 +19,8 @@ void maxProfitK_test();
 
 int cubicle_move_test();
 
+int step_count_test();
+
 
 
 #endif /* dp_test_hpp */

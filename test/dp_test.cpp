@@ -59,3 +59,18 @@ int cubicle_move_test(){
     
     return 0;
 }
+
+/****************************
+ *         走台阶测试         *
+ ****************************/
+int step_count_test() {
+    int n;
+    DynamicProgramming* dp= new DynamicProgramming;
+
+    while(cin >> n) {
+                cout << dp->step_count(n) << endl;
+    }
+    
+    delete dp;
+    return 0;
+}

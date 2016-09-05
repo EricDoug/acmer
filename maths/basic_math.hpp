@@ -16,4 +16,7 @@ bool isPrime(long x);
 // 质数因子
 int prime_factor();
 
+// 因数计数
+int factor_count(int n);
+
 #endif /* basic_math_hpp */
