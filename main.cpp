@@ -15,7 +15,7 @@
 #include "numerics_test.hpp"
 #include "basic_math_test.hpp"
 #include <fstream>
-
+#include <math.h>
 
 
 
@@ -47,7 +47,8 @@ int main(int argc, const char * argv[]) {
     //gcd_test();
     //recur_count_test();
     // step_count_test();
-    factor_count_test();
+    //factor_count_test();
+    
     
     
     return 0;
