@@ -18,6 +18,19 @@
 #include <math.h>
 
 
+int rank_array(int* a, int len) {
+    
+    int temp;
+    for(int i = len-1; i >= 0; i--) {
+        temp = a[i];
+    }
+    return 0;
+}
+
+
+
+
+
 
 int main(int argc, const char * argv[]) {
     // insert code here...
