@@ -16,6 +16,7 @@
 #include "basic_math_test.hpp"
 #include <fstream>
 #include <math.h>
+#include "ip_masks.h"
 
 
 int rank_array(int* a, int len) {
@@ -26,6 +27,8 @@ int rank_array(int* a, int len) {
     }
     return 0;
 }
+
+
 
 
 
@@ -61,7 +64,7 @@ int main(int argc, const char * argv[]) {
     //recur_count_test();
     // step_count_test();
     //factor_count_test();
-    
+    check_ip_network();
     
     
     return 0;
