@@ -19,4 +19,9 @@ int prime_factor();
 // 因数计数
 int factor_count(int n);
 
+// 小球落地
+double getJourney(int high,int k);
+double getKthHigh(int high,int k);
+
+
 #endif /* basic_math_hpp */

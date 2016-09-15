@@ -19,3 +19,15 @@ int factor_count_test() {
     
     return 0;
 }
+
+/*****************************
+ *        小球落地测试         *
+ *****************************/
+int throw_ball() {
+    int high;
+    while(cin >> high) {
+        cout << getJourney(high, 5) << endl;
+        cout << getKthHigh(high, 5) << endl;
+    }
+    return 0;
+}

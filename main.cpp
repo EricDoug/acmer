@@ -17,22 +17,7 @@
 #include <fstream>
 #include <math.h>
 #include "ip_masks.h"
-
-
-int rank_array(int* a, int len) {
-    
-    int temp;
-    for(int i = len-1; i >= 0; i--) {
-        temp = a[i];
-    }
-    return 0;
-}
-
-
-
-
-
-
+#include "meituan.h"
 
 
 int main(int argc, const char * argv[]) {
@@ -64,8 +49,14 @@ int main(int argc, const char * argv[]) {
     //recur_count_test();
     // step_count_test();
     //factor_count_test();
-    check_ip_network();
+    //check_ip_network();
+    //max_profit();
+    throw_ball();
     
-    
+
     return 0;
+    
+    
+    
+    
 }

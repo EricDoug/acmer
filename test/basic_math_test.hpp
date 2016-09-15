@@ -14,4 +14,6 @@
 
 int factor_count_test();
 
+int throw_ball();
+
 #endif /* basic_math_test_hpp */

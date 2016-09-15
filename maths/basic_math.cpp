@@ -27,3 +27,20 @@ int factor_count(int n) {
     
     return count;
 }
+/***********************************
+ *        小球落地所走路程            *
+ ***********************************/
+double getJourney(int high,int k){
+    double res = high;
+    for(int i=1;i<k;i++){
+        res += (high/(pow(2.0,i-1)));
+    }
+    return res;
+}
+
+
+double getKthHigh(int high,int k){
+    return high/(pow(2.0,k));
+}
+
+
