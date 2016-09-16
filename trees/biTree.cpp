@@ -116,3 +116,160 @@ void Binary_Tree::deleteSingleSon(BinTree *pParent,BinTree *pNode){
     delete pNode;
 }
 
+/*********************************
+ *            删除节点            *
+ *********************************/
+bool Binary_Tree::deleteNode(int value){
+    if(!root)
+        return false;
+    // 查找到待删除的节点
+    BinTree* pNode = root;
+    BinTree* pParent = NULL;
+    while (pNode) {
+        if (value < pNode->val) {
+            pParent = pNode;
+            pNode = pNode->left;
+        }
+        else if(value > pNode->val){
+            pParent = pNode;
+            pNode = pNode->right;
+        }
+        else{
+            break;  // 找到待删除的节点
+        }
+    }
+    if(!pNode)
+        return false;
+    
+    if (!pNode->left && !pNode->right) {  // 若待删除节点是叶节点
+        deleteChildless(pParent, pNode);
+    }
+    else if(!pNode->left || !pNode->right){  // 待删除节点只有一个孩子节点
+        deleteSingleSon(pParent, pNode);
+    }
+    else {
+        BinTree* pCur = pNode;  // 暂存待删除节点
+        pParent = pNode;
+        // 找到直接前驱节点,即左孩子的最右节点
+        pNode = pNode->left;
+        while (pNode->right) {
+            pParent = pNode;
+            pNode = pNode->right;
+        }
+        pCur->val = pNode->val;
+        if(!pNode->left)
+            deleteChildless(pParent, pNode);
+        else
+            deleteSingleSon(pParent, pNode);
+    }
+    
+    return true;
+    
+}
+
+/*******************************
+ *           前序遍历           *
+ *******************************/
+void Binary_Tree::preOrder(BinTree* root){
+    if(root){
+        cout << root->val << endl;
+        preOrder(root->left);
+        preOrder(root->right);
+    }
+}
+
+/***********************************
+ *          非递归前序遍历           *
+ ***********************************/
+void Binary_Tree::preOrder1(BinTree *root){
+    if(!root)
+        return;
+    
+    stack<BinTree*> s;
+    s.push(root);
+    BinTree* pCur;
+    while(!s.empty()) {
+        pCur = s.top();
+        s.pop();
+        cout << pCur->val << endl;
+        if (pCur->right) {
+            s.push(pCur->right);
+        }
+        if(pCur->left) {
+            s.push(pCur->left);
+        }
+    }
+}
+
+void Binary_Tree::visit(BinTree *pNode){
+    if (pNode) {
+        cout << pNode->val << endl;
+    }
+}
+
+/***************************************
+ *              中序遍历                *
+ ***************************************/
+void Binary_Tree::inOrder(BinTree *root){
+    if(root) {
+        inOrder(root->left);
+        visit(root);
+        inOrder(root->right);
+    }
+}
+
+
+/**************************************
+ *            非递归中序遍历            *
+ **************************************/
+void Binary_Tree::inOrder1(BinTree *root) {
+    
+    stack<BinTree*> s;
+    BinTree *pCur = root;
+    while (pCur || !s.empty()) {
+        // 找最左孩子
+        while (pCur) {
+            s.push(pCur);
+            pCur = pCur->left;
+        }
+        if (!s.empty()) {
+            pCur = s.top();  // 先访问最左孩子
+            s.pop();
+            visit(pCur);
+            pCur = pCur->right;
+        }
+    }
+    
+}
+
+/*****************************************
+ *             非递归中序遍历2              *
+ ******************************************/
+void Binary_Tree::inOrder2(BinTree *root) {
+    if (!root) {
+        return;
+    }
+    
+    stack<pair<BinTree*, int>> s;
+    s.push(make_pair(root, 0));
+    int times;
+    BinTree* pCur;
+    while (!s.empty()) {
+        pCur = s.top().first;
+        times = s.top().second;
+        s.pop();
+        if (times == 0) {   // 第一次压栈
+            if(pCur->right)
+                s.push(make_pair(pCur->right, 0));
+            s.push(make_pair(pCur, 1)); // 第二次压栈
+            if (pCur->left) {
+                s.push(make_pair(pCur->left, 0));
+            }
+        }
+        else {
+            visit(pCur);
+        }
+    }
+
+}
+ 

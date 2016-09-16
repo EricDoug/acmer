@@ -10,6 +10,7 @@
 #define __acmer__biTree__
 
 #include "pre_func.h"
+#include<stack>
 
 struct BinTree {
     int val;
@@ -33,7 +34,12 @@ public:
     
     bool insert(int value);
     BinTree* find(int value);  // 查找
-    void preOrder(BinTree root);  // 前序遍历
+    void visit(BinTree* pNode);
+    void preOrder(BinTree* root);  // 前序遍历
+    void preOrder1(BinTree* root);  //  非递归前序遍历
+    void inOrder(BinTree* root); // 中序遍历
+    void inOrder1(BinTree* root); // 非递归中序遍历
+    void inOrder2(BinTree* root); // 非递归中序遍历
     bool deleteNode(int value); // 删除节点
     
 
