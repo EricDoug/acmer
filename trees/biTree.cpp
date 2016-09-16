@@ -272,4 +272,45 @@ void Binary_Tree::inOrder2(BinTree *root) {
     }
 
 }
- 
+
+/*************************************
+ *            重建二叉树              *
+ ************************************/
+TreeNode* Binary_Tree::reConstructBinaryTree(vector<int> pre, vector<int> in) {
+
+    int len = pre.size();
+    
+    // binary condition
+    if(len == 0)
+        return NULL;
+    
+    int root_val =pre[0];
+    TreeNode *root = new TreeNode(root_val);
+    
+    
+    // find the root in inorder
+    int in_root;
+    for(in_root=0;in_root<len;++in_root){
+        if(in[in_root] == root_val)
+            break;
+        
+    }
+    
+    vector<int> in_left,in_right,pre_left,pre_right;
+    for(int i=0;i<len;++i){
+        if(i < in_root){
+            pre_left.push_back(pre[i+1]);
+            in_left.push_back(in[i]);
+        }
+        else if(i > in_root)  {
+            pre_right.push_back(pre[i]);
+            in_right.push_back(in[i]);
+        }
+    }
+
+    root->left = reConstructBinaryTree(pre_left,in_left);
+    root->right = reConstructBinaryTree(pre_right,in_right);
+
+    return root;
+}
+

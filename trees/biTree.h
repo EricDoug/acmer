@@ -20,6 +20,13 @@ struct BinTree {
 };
 
 
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x): val(x),left(NULL), right(NULL) {}
+};
+
 class Binary_Tree {
 private:
     BinTree* root;
@@ -41,6 +48,8 @@ public:
     void inOrder1(BinTree* root); // 非递归中序遍历
     void inOrder2(BinTree* root); // 非递归中序遍历
     bool deleteNode(int value); // 删除节点
+    
+    TreeNode* reConstructBinaryTree(vector<int> pre, vector<int> in); // 重建二叉树
     
 
 };
