@@ -51,8 +51,9 @@ int main(int argc, const char * argv[]) {
     //factor_count_test();
     //check_ip_network();
     //max_profit();
-    throw_ball();
-    
+   // throw_ball();
+    //prime_company();
+    shuixian_test();
 
     return 0;
     

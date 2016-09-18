@@ -23,5 +23,12 @@ int factor_count(int n);
 double getJourney(int high,int k);
 double getKthHigh(int high,int k);
 
+// 素数伴侣
+int prime_company();
+
+// 水仙花数
+bool is_shuixian(int x);
+int shuixian_test();
+
 
 #endif /* basic_math_hpp */
