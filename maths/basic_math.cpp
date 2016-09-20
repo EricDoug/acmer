@@ -104,3 +104,21 @@ int shuixian_test() {
     return 0;
 }
 
+
+/*********************************
+ *            前n项和             *
+ *********************************/
+int sum_n_sqrt(){
+    int n,m;
+    while(cin >> n >> m) {
+        float sum = n;
+        float x = n;
+      	 for(int i = 1;i < m;i++){
+             x = sqrt(x);
+             sum += x;
+         }
+        cout << setiosflags(ios::fixed) <<  setprecision(2) <<  sum << endl;
+    }
+    return 0;
+}
+ 

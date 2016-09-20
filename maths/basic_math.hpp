@@ -10,6 +10,7 @@
 #define basic_math_hpp
 
 #include "pre_func.h"
+#include <iomanip>
 
 bool isPrime(long x);
 
@@ -29,6 +30,9 @@ int prime_company();
 // 水仙花数
 bool is_shuixian(int x);
 int shuixian_test();
+
+// 前n项和
+int sum_n_sqrt();
 
 
 #endif /* basic_math_hpp */
