@@ -34,5 +34,8 @@ int shuixian_test();
 // 前n项和
 int sum_n_sqrt();
 
+// 称砝码
+int weight_chen();
+
 
 #endif /* basic_math_hpp */

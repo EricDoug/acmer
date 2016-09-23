@@ -21,6 +21,9 @@
 #include <sstream>
 #include <iomanip>
 
+#include<map>
+#include<vector>
+#include<deque>
 
 
 int main(int argc, const char * argv[]) {
@@ -57,6 +60,9 @@ int main(int argc, const char * argv[]) {
    // throw_ball();
     //prime_company();
     //shuixian_test();
+    // baidu_1();
+    //six_1();
+    weight_chen();
     
        
     
