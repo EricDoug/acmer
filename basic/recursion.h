@@ -13,6 +13,7 @@
 
 class Recursion {
 private:
+    int map[100000];
     
 public:
 //    Recursion();
@@ -30,7 +31,16 @@ public:
     // 计算迭代次数
     int recur_count(int n);
     
+    // 上楼梯
+    int countWays(int n);
+    
     int getCnt();
+    
+    // 机器人走方格
+    int robot_walk1(int x,int y);
+    
+    // 机器人走带陷阱的方格
+    int robot_walk2(vector<vector<int> > map, int x, int y);
     
 private:
     int cnt=0;

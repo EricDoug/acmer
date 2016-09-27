@@ -90,4 +90,76 @@ int xueyingyu(){
     return 0;
 }
 
+// 迷宫问题
+int maze_dfs() {
+    int m,n;
+    while(cin >> m >> n){
+        vector<vector<int>> map(m, vector<int>(n,0));
+        
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+                cin >> map[i][j];
+            }
+        }
+        
+        vector<vector<int>> visited(m, vector<int>(n,0));
+        
+        Node* startNode = new Node(0,0);
+        Node* endNode = new Node(m-1,n-1);
+        
+        stack<Node*> s;
+        s.push(startNode);
+        visited[startNode->x][startNode->y] = 1;
+        int step[][2] = {{1,0}, {0,1}};
+        while (!s.empty())
+        {
+            bool flag = false;
+            Node* curNode = s.top(); // 取当前节点
+            if(curNode->x == endNode->x && curNode->y == endNode->y)
+            {
+                break;  // 如果到出口了，退出
+            }
+            else
+            {
+                for(int i=0;i<2;i++)
+                {
+                    Node* nextNode = new Node(curNode->x+step[i][0], curNode->y+step[i][1]);
+                    if(nextNode->x >=0 && nextNode->x < m && nextNode->y >= 0 && nextNode->y <n
+                       && map[nextNode->x][nextNode->y] == 0 && visited[nextNode->x][nextNode->y] == 0)
+                    {
+                        s.push(nextNode);
+                        visited[nextNode->x][nextNode->y] = 1;
+                        flag = true;
+                        break;
+                    }
+                }
+                if(flag)
+                    continue;
+            }
+           
+            s.pop();
+            
+        }
+        stack<Node*> reverseS;
+        while (!s.empty()) {
+            Node* curNode = s.top();
+            reverseS.push(curNode);
+            s.pop();
+        }
+        
+        while (!reverseS.empty()) {
+            Node* curNode = reverseS.top();
+            cout << "(" << curNode->x << "," << curNode->y << ")" << endl;
+            reverseS.pop();
+        }
+        
+        
+    }
+    
+    return 0;
+}
+
+
+
+
 

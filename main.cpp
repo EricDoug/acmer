@@ -21,6 +21,7 @@
 #include <sstream>
 #include <iomanip>
 #include "huawei.h"
+#include "basic_algorithm_test.hpp"
 
 
 
@@ -92,6 +93,8 @@ int main(int argc, const char * argv[]) {
     // baidu_1();
     //six_1();
     // weight_chen();
+    //maze();
+    countWays_test();
    
     
     
