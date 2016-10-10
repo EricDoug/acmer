@@ -294,4 +294,37 @@ ListNode* reverseKthList(ListNode* head,int k){
     
 }
 
+// 链表相邻元素翻转
+int reverse_adj_list(){
+    int m;
+    while(cin >> m){
+        ListNode *head,*h,*s,*p,*q,*l;
+        p = create(m);
+        head = new ListNode(-1);
+        h = head;
+        printList(p);
+        while (p != NULL && p->next != NULL) {
+            q = p;
+            p = p->next;
+            head->next = p;
+            l = p->next;
+            p->next = q;
+            head = q;
+            p=l;
+        }
+        head->next = p;
+        h = h->next;
+        while (h->next) {
+            cout << h->val << "->";
+            s = h;
+            h = h->next;
+            delete s;
+        }
+        cout << h->val << endl;
+        delete h;
+    }
+    
+    return 0;
+}
+
 

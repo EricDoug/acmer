@@ -69,5 +69,8 @@ void printList(ListNode* head);
 // 逆序k个
 ListNode* reverseKthList(ListNode* head, int k);
 
+//链表相邻元素翻转
+int reverse_adj_list();
+
 
 #endif /* defined(__acmer__huawei__) */
