@@ -78,9 +78,10 @@ int main(int argc, const char * argv[]) {
 //    ListNode* pReverse =reverseList(head);
 //    printList(pReverse);
     
-    reverseKth_test();
+    //reverseKth_test();
     //reverse_adj_list();
-       
+    //duplicate_some();
+    character_stat();
     
 
     return 0;

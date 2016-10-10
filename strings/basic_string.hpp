@@ -56,6 +56,7 @@ public:
     
     // 检测ip是否合法
     bool check_ip(string ip);
+    
 };
 
 

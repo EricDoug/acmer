@@ -72,5 +72,16 @@ ListNode* reverseKthList(ListNode* head, int k);
 //链表相邻元素翻转
 int reverse_adj_list();
 
+/***********************************
+ *            字符操作相关           *
+ ***********************************/
+// 去掉大写、小写、数字字符
+int duplicate_some();
+
+// 字符统计
+string int2string(int m);
+int character_stat();
+
+
 
 #endif /* defined(__acmer__huawei__) */

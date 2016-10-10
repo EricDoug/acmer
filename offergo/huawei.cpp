@@ -327,4 +327,72 @@ int reverse_adj_list(){
     return 0;
 }
 
+// 去掉字符串中大写字母、小写字母和数字字符
+int duplicate_some() {
+    string str;
+    while(cin >> str){
+        string new_str;
+        for(int i = 0;i<str.size();i++){
+            if(isalnum(str[i]))
+                new_str.push_back(str[i]);
+        }
+        cout << new_str << endl;
+    }
+    
+    return 0;
+}
+
+// 字符统计
+string int2string(int m){
+    string tmp;
+    while(m>0){
+        tmp.push_back(m%10 + '0');
+        m /= 10;
+    }
+    int len = tmp.size();
+    char t;
+    for(int i=0;i<len/2;i++){
+        t = tmp[i];
+        tmp[i] = tmp[len-1-i];
+        tmp[len-1-i] = t;
+    }
+    return tmp;
+}
+
+int character_stat() {
+    string str;
+    while(cin >> str){
+        int len = str.length();
+        int count = 1;
+        string new_str;
+        for(int i=0;i<len;i++)
+        {
+            if(str[i] == str[i+1])
+            {
+                count++;
+            }
+            else
+            {
+                new_str.push_back(str[i]);
+                if(count > 1)
+                {
+                    string num = int2string(count);
+                    new_str += num;
+                    count = 1;
+                }
+            }
+        }
+        if(count > 1)
+        {
+            new_str.push_back(str[len-1]);
+            string num = int2string(count);
+            new_str += num;
+        }
+        
+        cout << new_str << endl;
+    }
+    
+    return 0;
+}
+
 
