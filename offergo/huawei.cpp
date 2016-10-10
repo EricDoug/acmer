@@ -159,7 +159,86 @@ int maze_dfs() {
     return 0;
 }
 
+// 名字漂亮度
+int pretty_name() {
+    
+    int N;
+    while(cin >> N){
+        for(int i=0;i<N;i++){
+            string str;
+            cin >> str;
+            int len = str.length();
+            int char_map[26] = {0};
+            for(int j = 0;j < len;j++){
+                if(str[j] >= 'a' && str[j] <= 'z'){
+                    char_map[str[j] - 'a']++;
+                }
+                else {
+                    char_map[str[j] - 'A']++;
+                }
+            }
+            sort(char_map,char_map+26);
+            int sum = 0;
+            int init = 26;
+            for(int j = 25;j>=0;j--){
+                sum += (char_map[j]*init);
+                init--;
+            }
+            cout << sum << endl;
+            
+        }
+    }
+    
+    return 0;
+
+}
 
 
+// 输出单向链表中倒数第k个结点
+int outputkthNode(){
+    int n;
+    while(cin >> n){
+        ListNode* head = new ListNode(-1);
+        ListNode* cur = head;
+        for(int i = 0;i<n;i++){
+            int value;
+            cin >> value;
+            ListNode* pNode = new ListNode(value);
+            cur->next = pNode;
+            cur=pNode;
+        }
+        int k;
+        cin >> k;
+        if(k <= 0){
+            cout << 0 << endl;
+            continue;
+        }
+        ListNode* faster = head->next;
+        ListNode* slower = head->next;
+        // faster先走k步
+        for(int j=0;j<k;j++)
+            faster=faster->next;
+        
+        while(faster != NULL){
+            slower = slower->next;
+            faster = faster->next;
+        }
+        cout << slower->val << endl;
+        
+    }
+    
+    
+    return 0;
+}
 
+// 打印链表
+void printLinkedList(ListNode* head){
+    ListNode* pNode = head->next;
+    while (pNode != NULL) {
+        cout << pNode->val << ' ';
+        pNode = pNode->next;
+    }
+    cout << endl;
+    delete pNode;
+}
 

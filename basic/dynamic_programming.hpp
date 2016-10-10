@@ -51,6 +51,8 @@ public:
     // 走台阶
     int step_count(int n);
     
+    // 找零钱问题
+    int charge(int velue, const int* denomination, int size);
     
     
 };

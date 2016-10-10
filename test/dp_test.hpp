@@ -21,6 +21,9 @@ int cubicle_move_test();
 
 int step_count_test();
 
+// 找零钱测试
+int charge_test();
+
 
 
 #endif /* dp_test_hpp */

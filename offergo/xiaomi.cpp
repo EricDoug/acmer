@@ -90,3 +90,33 @@ int xiaomi_4(){
     
     return 0;
 }
+
+
+//int xiaomi_11(){
+//    int n;
+//    while(cin >> n){
+//        map<int,vector<int>> tree;
+//        deque<int> q;
+//        pair<int,int>
+//        for(int i=0;i < n;i++){
+//            int parent,node;
+//            cin >> parent >> node;
+//            tree[parent].push_back(make_pair(parent, node));
+//        }
+//        int max_depth=0;
+//        int root = 0;
+//        q.push_back(root);
+//        while(!q.empty()){
+//            int cur_node = q.front();
+//            q.pop_front();
+//            for(int i=0;i<tree[cur_node].size();i++){
+//                if(tree[cur_node][])
+//                max_depth++;
+//                q.push_back(tree[cur_node][i]);
+//            }
+//        }
+//
+//
+//    }
+//    return 0;
+//}

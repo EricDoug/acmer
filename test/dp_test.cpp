@@ -74,3 +74,16 @@ int step_count_test() {
     delete dp;
     return 0;
 }
+
+int charge_test() {
+    int denomination[] = {1,2,5,10,20,50,100};
+    
+    int size = sizeof(denomination) / sizeof(int);
+    int value = 200;
+    DynamicProgramming* dp = new DynamicProgramming;
+    
+    int c = dp->charge(value, denomination, size);
+    cout << c << endl;
+    
+    return 0;
+}

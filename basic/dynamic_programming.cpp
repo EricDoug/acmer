@@ -313,3 +313,37 @@ int DynamicProgramming::step_count(int n) {
     return 0;
 }
 
+/***************************************
+ *              找零钱问题               *
+ ***************************************/
+int DynamicProgramming::charge(int value, const int *denomination, int size) {
+    int i;
+    int** dp = new int*[size];
+    for (i = 0; i < size; i++) {
+        dp[i] = new int[value+1];
+    }
+    
+    
+    int j;
+    for(j = 0;j <= value;j++){
+        dp[0][j] = 1;
+    }
+    
+    for (i = 1; i < size; i++) {
+        dp[i][0] = 1;
+        for (j = 1; j <= value; j++) {
+            if(j >= denomination[i])
+                dp[i][j] = dp[i-1][j] + dp[i][j-denomination[i]];
+            else
+                dp[i][j] = dp[i-1][j];
+        }
+    }
+    int time = dp[size-1][value];
+    
+    for(i = 0;i < size;i++)
+        delete[] dp[i];
+    delete[] dp;
+    
+    return time;
+    
+}
