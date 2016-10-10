@@ -46,7 +46,7 @@ int pretty_name();
 
 // 输出单向链表中倒数第k个结点
 int outputkthNode();
-void printLinkedList(ListNode* head);
+
 
 /********************************
  *            链表翻转            *
@@ -57,6 +57,17 @@ struct node {
     node(int x): m(x),next(NULL) {}
 };
 
+// 新建链表序列
+ListNode* create(int num);
+// 单链表翻转
+ListNode* reverseList(ListNode* head);
+// 打印单链表
+void printList(ListNode* head);
+/**********************************
+ *             链表逆序进阶         *
+ **********************************/
+// 逆序k个
+ListNode* reverseKthList(ListNode* head, int k);
 
 
 #endif /* defined(__acmer__huawei__) */

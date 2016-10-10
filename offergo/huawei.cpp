@@ -231,9 +231,25 @@ int outputkthNode(){
     return 0;
 }
 
+// 创建单链表
+ListNode* create(int num){
+    ListNode *head=NULL, *pNode, *pCur=NULL;
+    for(int i=1;i <= num;i++){
+        pNode = new ListNode(i);
+        if(head == NULL){
+            head = pNode;
+        }
+        else {
+            pCur->next = pNode;
+        }
+        pCur = pNode;
+    }
+    return head;
+}
+
 // 打印链表
-void printLinkedList(ListNode* head){
-    ListNode* pNode = head->next;
+void printList(ListNode* head){
+    ListNode* pNode = head;
     while (pNode != NULL) {
         cout << pNode->val << ' ';
         pNode = pNode->next;
@@ -241,4 +257,41 @@ void printLinkedList(ListNode* head){
     cout << endl;
     delete pNode;
 }
+
+// 链表逆序
+ListNode* reverseList(ListNode* head) {
+    if (head == NULL) {
+        return NULL;
+    }
+    ListNode *pCur=head, *pNext=NULL, *pPre=NULL, *pReverseHead=NULL;
+    while (pCur != NULL) {
+        pNext = pCur->next;
+        if (pNext == NULL) {
+            pReverseHead = pCur;
+        }
+        pCur->next = pPre;
+        pPre = pCur;
+        pCur = pNext;
+    }
+    
+    return pReverseHead;
+}
+
+// 逆序k个
+ListNode* reverseKthList(ListNode* head,int k){
+    if (head == NULL) {
+        return NULL;
+    }
+    
+    ListNode *pCur=head, *pPre=NULL, *pNext=NULL;
+    for (int i=0; i < k; i++) {
+        pNext = pCur->next;
+        pCur->next = pPre;
+        pPre = pCur;
+        pCur = pNext;
+    }
+    return pCur;
+    
+}
+
 

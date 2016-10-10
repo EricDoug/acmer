@@ -22,8 +22,9 @@
 #include <iomanip>
 #include "huawei.h"
 #include "basic_algorithm_test.hpp"
-
-
+#include "huawei_test.hpp"
+#include <queue>
+#include <functional>
 
 
 
@@ -71,8 +72,13 @@ int main(int argc, const char * argv[]) {
     //yidian_2();
     //charge_test();
     //pretty_name();
-    outputkthNode();
+    //outputkthNode();
+//    ListNode *head = create(7);
+//    printList(head);
+//    ListNode* pReverse =reverseList(head);
+//    printList(pReverse);
     
+    //reverseKth_test();
        
     
 
