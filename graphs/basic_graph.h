@@ -11,7 +11,11 @@
 
 #include "pre_func.h"
 #include <stack>
+#include <deque>
 using namespace std;
+
+// 条条大路通罗马
+int find_road();
 
 
 

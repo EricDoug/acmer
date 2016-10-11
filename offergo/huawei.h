@@ -81,6 +81,19 @@ int duplicate_some();
 // 字符统计
 string int2string(int m);
 int character_stat();
+// 字符转换
+int stringChange();
+// 字符串乘积
+int mul();
+
+
+/**********************************
+ *             排序问题            *
+ *********************************/
+int cmp_asec(const void* a,const void* b);  // 升序比较
+int cmp_desc(const void* a,const void* b);  // 降序比较
+
+int sort_jiou();
 
 
 

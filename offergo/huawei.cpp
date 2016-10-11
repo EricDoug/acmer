@@ -395,4 +395,138 @@ int character_stat() {
     return 0;
 }
 
+// 字符转换
+int stringChange(){
+    char input[100];
+    while (cin.getline(input, 100))
+    {
+        int len = strlen(input);
+        char output[100];
+        int n=0;
+        for (int i=0; i < len; i++)
+        {
+            if(isalpha(input[i])){
+                if(input[i] == 'z')
+                    output[n++] = 'a';
+                else if(input[i] == 'Z')
+                    output[n++] = 'A';
+                else
+                    output[n++] = input[i] + 1;
+            }
+            else
+                output[n++] = input[i];
+        }
+        output[n] = '\0';
+        cout << output << endl;
+    }
+    
+    return 0;
+}
 
+// 字符串乘积
+int mul(){
+    char input1[100],input2[100],output[100];
+    while(cin >> input1 >> input2) {
+        int m = strlen(input1);
+        int n = strlen(input2);
+        
+        long long x = 0;
+        for(int i=0;i < m;i++){
+            x += (input1[i] - '0') * pow(10.0, --m);
+        }
+        long long y = 0;
+        for (int j = 0; j < n; j++) {
+            y += (input2[j] - '0')* pow(10.0, --n);
+        }
+        
+        long long mul_res = x*y;
+        string res;
+        if(mul_res == 0){
+            res.push_back('0');
+            cout << res << endl;
+            return 0;
+        }
+        stack<char> st;
+        while(mul_res > 0)
+        {
+            char ch = mul_res%10 + '0';
+            st.push(ch);
+            mul_res /= 10;
+        }
+        while (!st.empty())
+        {
+            char ch = st.top();
+            res.push_back(ch);
+            st.pop();
+        }
+        cout << res << endl;
+    }
+    return 0;
+}
+
+// 升序比较
+int cmp_asec(const void* a, const void* b){
+    return *(int*)a - *(int*)b;
+}
+
+int cmp_desc(const void* a, const void* b){
+    return *(int*)b - *(int*)a;
+}
+
+// 奇偶排序
+int sort_jiou(){
+    int n;
+    while(cin >> n)
+    {
+        int ji_num = 0,ou_num = 0;
+        int* ji = new int[n];
+        int* ou = new int[n];
+        int* num = new int[n];
+        for (int i = 0; i < n; i++)
+        {
+            cin >> num[i];
+            if(num[i]%2 == 1)
+            {
+                ji[ji_num++] = num[i];
+            }
+            else
+            {
+                ou[ou_num++] = num[i];
+            }
+        }
+        // 奇数升序
+        qsort(ji, ji_num, sizeof(int), cmp_asec);
+        // 偶数降序
+        qsort(ou, ou_num, sizeof(int), cmp_desc);
+        
+        int m = 0;
+        for (int i = 0; i < ji_num && i < ou_num; i++)
+        {
+            num[m++] = ji[i];
+            num[m++] = ou[i];
+        }
+        if (ji_num > ou_num)
+        {
+            for (int j=ou_num; j < ji_num; j++)
+            {
+                num[m++] = ji[j];
+            }
+        }
+        else
+        {
+            for(int j = ji_num; j < ou_num; j++){
+                num[m++] = ou[j];
+            }
+        }
+        
+        for(int k=0;k<m;k++)
+            cout << num[k] << " ";
+        
+        delete[] num;
+        delete[] ji;
+        delete[] ou;
+        
+    }
+    
+    return 0;
+}

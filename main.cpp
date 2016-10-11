@@ -25,7 +25,7 @@
 #include "huawei_test.hpp"
 #include <queue>
 #include <functional>
-
+#include "basic_graph.h"
 
 
 int main(int argc, const char * argv[]) {
@@ -81,8 +81,11 @@ int main(int argc, const char * argv[]) {
     //reverseKth_test();
     //reverse_adj_list();
     //duplicate_some();
-    character_stat();
-    
+    //character_stat();
+    //stringChange();
+    //mul();
+    //sort_jiou();
+    find_road();
 
     return 0;
     
